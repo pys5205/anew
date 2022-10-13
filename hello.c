@@ -1,5 +1,5 @@
 #include <stdio.h>
 
-voidi main(){
+void main(){
   printf("Hello Linux!!\n");
 }
