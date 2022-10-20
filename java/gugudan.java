@@ -15,7 +15,7 @@ public class gugudan {
           System.out.println(num+"*"+i+"="+num*i);
         }
       }else{
-        System.out.println("Insert number 2~9. Retype Again");
+        System.out.println("Insert number 2~9. Retype Again ");
       }
     }
 
