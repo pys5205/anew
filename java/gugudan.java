@@ -10,11 +10,11 @@ public class gugudan {
 
       if(num==0){
         break;
-      }else if(num>0 && num<10){
-        for(int i=1; i<=9; i++){
+      } else if(num>0 && num<10) {
+        for(int i=1; i<=9; i++) {
           System.out.println(num+"*"+i+"="+num*i);
         }
-      }else{
+      } else {
         System.out.println("Insert number 2~9. Retype Again ");
       }
     }
