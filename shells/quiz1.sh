@@ -8,8 +8,8 @@ read man
 
 if [ $man -lt $woman ]; then
 	echo "old Woman"
-elif [ $man -gt $woman ]; then
-	echo "old Man"
-else
+elif [ $man -eq $woman ]; then
 	echo "same"
+else
+	echo "old Man"
 fi
