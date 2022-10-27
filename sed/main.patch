@@ -1,0 +1,10 @@
+diff -Naur a/main.c b/main.c
+--- a/main.c	2022-10-27 11:31:28.967004138 +0900
++++ b/main.c	2022-10-27 11:32:17.027711091 +0900
+@@ -1,5 +1,6 @@
+ #include <stdio.h>
+ 
+ int main(){
++	printf("Hello, Workd~!!");
+ 	return 0;
+ }
