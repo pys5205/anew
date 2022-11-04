@@ -1,6 +1,6 @@
 var axios = require('axios');
 
-require('dotenv').config( { path: "../../.env"});
+const env = require('dotenv').config( { path: "../../.env"});
 
 var data = JSON.stringify({
     "collection": "things",
