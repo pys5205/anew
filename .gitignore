@@ -9,3 +9,6 @@ node/**/node_modules
 
 #for mongodb
 mongodb/backup
+
+#python venv
+python/**/.venv
