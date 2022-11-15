@@ -4,7 +4,7 @@
  const multer     = require('multer');
  const fs         = require('fs');
  const path       = require('path');
- const env        = require("dotenv").config({ path: "../.env"});
+ const env        = require("dotenv").config({ path: "../../.env"});
  
  app.use(bodyParser.json());
  app.use(bodyParser.urlencoded({extended : false}));

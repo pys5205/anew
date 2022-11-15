@@ -7,6 +7,7 @@
 node/**/node_modules
 node/**/package-lock.json
 
+# aws S3
 s3/node_modules
 s3/package-lock.json
 
