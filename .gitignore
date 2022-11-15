@@ -1,4 +1,3 @@
-*.ftpconfig
 # anew
 
 #environment files
@@ -6,8 +5,10 @@
 
 # for nodejs node_moudles
 node/**/node_modules
+node/**/package-lock.json
 
 #for mongodb
+mongodb/**/*.json
 mongodb/backup
 
 #python venv
