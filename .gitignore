@@ -17,3 +17,7 @@ mongodb/backup
 
 #python venv
 python/**/.venv
+
+#docker
+docker/**/node_modules
+docker/**/package-lock.json
