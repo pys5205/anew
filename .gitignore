@@ -21,3 +21,5 @@ python/**/.venv
 #docker
 docker/**/node_modules
 docker/**/package-lock.json
+dockertest/**/node_modules
+dockertest/**/package-lock.json
