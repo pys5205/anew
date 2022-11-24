@@ -5,8 +5,8 @@ FROM node:16
 WORKDIR /usr/src/app
 
 # Step 3
-RUN git clone https://github.com/devheyrin/docker-heyrin
-WORKDIR docker-heyrin
+RUN git clone https://github.com/pys5205/docker-pys
+WORKDIR docker-pys
 RUN npm install
 
 # Step 4
