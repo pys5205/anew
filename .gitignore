@@ -6,6 +6,7 @@
 # for nodejs node_moudles
 node/**/node_modules
 node/**/package-lock.json
+node/config/pool.js
 
 # aws S3
 s3/node_modules
