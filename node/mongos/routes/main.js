@@ -24,7 +24,6 @@ router.get('/list', function(req, res, next){
 
 //get
 router.get('/get', function(req, res, next) {
-    db=req.db;
     var userid = req.query.input
     User.findOne({'userid' : userid}, function(err, doc) {
         if(err) console.log('err')
