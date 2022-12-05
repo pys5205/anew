@@ -7,6 +7,7 @@
 node/**/node_modules
 node/**/package-lock.json
 node/config/pool.js
+node/**/uploadedFiles
 
 # aws S3
 s3/node_modules
