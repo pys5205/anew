@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const mongoose = require("mongoose")
+const async = require("async")
 
 // define schema
 var userSchema = mongoose.Schema({
@@ -95,3 +96,77 @@ router.post('/delete', function(req, res, next) {
 })
 
 module.exports = router;
+
+async.series([query1, query2, query3, query4, query5, query6], function(err, results) {
+    if(err) {
+        console.log('error : ' + err);
+    }
+    else {
+        console.log('task finish');
+    }
+})
+
+// select * from users
+function query1(callback) {
+    User.find({}, {'_id':0}).exec(function (err, user) {
+            console.log("Query 1");
+            console.log(user+"\n");
+            callback(null)
+        })
+}
+
+// select userid, name, city from users
+function query2(callback) {
+    User.find({}, {'_id':0, 'userid':1, 'name':1, 'city':1}).exec(function (err, user) {
+        console.log("Query 2");
+        console.log(user+"\n");
+        callback(null)
+    })
+}
+
+// select & from users where city = 'Seoul' order by userid limit 3
+function query3(callback) {
+    User.find({'city':'Seoul'}, {'_id':0}).sort({'userid':1}).limit(3).exec(function (err, user) {
+        console.log("Query 3");
+        console.log(user+"\n");
+        callback(null)
+    })
+}
+
+// select userid from users where userid='/user/' 
+function query4(callback) {
+    User.find({'userid':{'$regex':'100'}}, {'_id':0}).select('userid').exec(function (err, user) {
+        console.log("Query 4");
+        console.log(user+"\n");
+        callback(null)
+    })
+}
+
+// using JSON doc query
+// select userid, name, age from users where city ='Seoul' and age > 15 and age < 23
+function query5(callback) {
+    User.find({'city':'Seoul', 'age':{$gt:14, $lt:23}}, {'_id':0})
+        .sort({'age':-1})
+        .select('userid name age')
+        .exec(function (Err, user) {
+            console.log("query 5");
+            console.log(user+"\n");
+            callback(null)
+        })
+}
+
+// using querybuilder
+// select userid, name, age from users where city ='Seoul' and age > 15 and age < 23
+function query6(callback) {
+    User.find({}, {'_id':0})
+        .where('city').equals('Seoul')
+        .where('age').gt(15).lt(23)
+        .sort({'age':1})
+        .select('userid name age')
+        .exec(function (Err, user) {
+            console.log("query 6");
+            console.log(user+"\n");
+            callback(null)
+        })
+}
+
