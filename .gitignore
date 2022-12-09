@@ -13,6 +13,10 @@ node/config/pool.js
 node/config/db_config.json
 node/**/uploadedFiles
 
+# react
+react/**/node_modules
+react/**/package-lock.json
+
 # aws S3
 s3/node_modules
 s3/package-lock.json
