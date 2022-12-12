@@ -16,6 +16,7 @@ node/**/uploadedFiles
 # react
 react/**/node_modules
 react/**/package-lock.json
+reate/**/public
 
 # aws S3
 s3/node_modules
