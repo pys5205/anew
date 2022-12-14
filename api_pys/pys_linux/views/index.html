@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <meta charset="UTF-8">
+      <title>linux data Test </title>
+      <script type="text/javascript">
+            
+            var t = window.setInterval("reloadIFrame();", 5000);
+            
+            function startReload(){
+                  t;
+            }
+            function stopReload(){
+                  setTimeout(function(){
+                      clearInterval(t);
+                  }, 5000);
+            }
+      
+            function reloadIFrame() {
+                  window.parent.document.targetURL.location.reload();
+             }
+      </script>
+      <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<h1 class="maintext"> linux data Test </h1>
+<form method='post' action="/post_list" name='mongoform' >
+      <div class="listcontainer">
+            <input type='button' id="listbutton" class="custom-btn btn-4" value='linux tests list'  onclick='document.targetURL.location.href="/list"' >
+            <input type='button' id="listbutton" class="custom-btn btn-4" value='disk'  onclick='document.targetURL.location.href="/list/disk"' >
+            <input type='button' id="listbutton" class="custom-btn btn-4" value='process'  onclick='document.targetURL.location.href="/list/process"' >
+      </div>
+      <p>
+      <br/>
+      <div class="selectcontainer">
+            <input type='text' class="selectTime" size='20' name='input'>
+            <input type='button' id="listbutton" class="custom-btn btn-4" value='time select' onclick='document.targetURL.location.href="/time?input="+document.mongoform.input.value'>
+            <input type='button' id="listbutton" class="custom-btn btn-4" value='start'  onclick='document.targetURL.location.href="/start"; startReload();' >
+            <input type='button' id="listbutton" class="custom-btn btn-4" value='stop'  onclick='document.targetURL.location.href="/stop"; stopReload();' >
+      </div>
+      <p>
+</form>
+<iframe id=targetURL name=targetURL class="iframe-preview center" width="75%" height="700" style="border:none; margin-left:100px" src="http://43.200.152.117:3000/list"></iframe>
+</body>
+</html>

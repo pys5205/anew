@@ -34,3 +34,8 @@ docker/**/node_modules
 docker/**/package-lock.json
 docker-pys/**/node_modules
 docker-pys/**/package-lock.json
+
+#API_pys
+api_pys/**/node_modules
+api_pys/**/package-lock.json
+
