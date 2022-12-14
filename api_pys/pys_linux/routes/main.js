@@ -31,7 +31,7 @@ shell.cd('~')
 // start
 router.get('/start', function(req, res, next) {
     //shell.exec('sh /data/python/start.sh');
-    spawn('sh',['/data/python/start.sh'], {
+    spawn('sh',['/data/anew/api_pys/start.sh'], {
         detached: true
     })
     
@@ -39,7 +39,7 @@ router.get('/start', function(req, res, next) {
 
 // stop
 router.get('/stop', function(req, res, next) {
-    shell.exec('sh /data/python/stop.sh');
+    shell.exec('sh /data/anew/api_pys/stop.sh');
 })
 
 // list
