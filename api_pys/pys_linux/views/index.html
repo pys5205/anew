@@ -9,11 +9,13 @@
             
             function startReload(){
                   t = window.setInterval("reloadIFrame();", 5000);
+                  alert("start");
             }
             function stopReload(){
                   setTimeout(function(){
                       clearInterval(t);
                   }, 5000);
+                  alert("stop");
             }
       
             function reloadIFrame() {
