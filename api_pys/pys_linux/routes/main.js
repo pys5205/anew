@@ -46,6 +46,7 @@ router.get('/stop', function(req, res, next) {
 router.get('/list', function(req, res, next) {
      Data.find({}, { '_id': 0 }).sort({"time":-1}).limit(30).exec(function(err, docs) {
         if (err) console.log('err')
+        // else res.json({ ok:true, type : docs });
         res.writeHead(200);
         var template = `
         <!DOCTYPE html>
@@ -172,6 +173,7 @@ router.get('/list/disk', function(req, res, next) {
 router.get('/list/process', function(req, res, next) {
     Data.find({}, { '_id': 0 }).exec(function(err, docs) {
         if (err) console.log('err')
+
         res.writeHead(200);
         var template = `
         <!DOCTYPE html>
@@ -220,7 +222,6 @@ router.get('/time', function(req, res, next) {
     var input = req.query.input
     Data.find({ 'time': { "$gte": input } }, { '_id': 0 }).exec(function(err, docs) {
         if (err) console.log('err')
-        else console.log(docs)
         res.writeHead(200);
         var template = `
         <!DOCTYPE html>
