@@ -4,7 +4,6 @@
       <meta charset="UTF-8">
       <title>linux data Test </title>
       <script type="text/javascript">
-            
             var t;
             
             function startReload(){
@@ -20,7 +19,17 @@
       
             function reloadIFrame() {
                   window.parent.document.targetURL.location.reload();
-             }
+            }
+            
+            function timenull() {
+                  var timeInput = document.getElementById('timeValue').value;
+                  
+                  if(timeInput == '') {
+                        alert("no time");
+                  } else {
+                        document.targetURL.location.href="/time?input="+document.mongoform.input.value;
+                  }
+            }
       </script>
       <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="./style.css">
@@ -36,8 +45,8 @@
       <p>
       <br/>
       <div class="selectcontainer">
-            <input type='text' class="selectTime" size='20' name='input'>
-            <input type='button' id="listbutton" class="custom-btn btn-4" value='time select' onclick='document.targetURL.location.href="/time?input="+document.mongoform.input.value'>
+            <input type='text' class="selectTime" id="timeValue"size='20' name='input'>
+            <input type='button' id="listbutton" class="custom-btn btn-4" value='time select' onclick='timenull();'>
             <input type='button' id="listbutton" class="custom-btn btn-4" value='start'  onclick='document.targetURL.location.href="/start"; startReload();' >
             <input type='button' id="listbutton" class="custom-btn btn-4" value='stop'  onclick='document.targetURL.location.href="/stop"; stopReload();' >
       </div>
